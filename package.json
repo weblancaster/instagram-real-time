@@ -1,0 +1,16 @@
+{
+    "name": "RealTimeInstagram",
+    "version": "0.0.1",
+    "description": "Real time instagram",
+    "author": "Michael Lancaster",
+    "dependencies": {
+        "socket.io": "latest",
+        "express": "latest",
+        "jade": "latest",
+        "request": "latest"
+    },
+    "engines": {
+    	"node": "0.10.12",
+    	"npm": "1.2.30"
+    }
+}

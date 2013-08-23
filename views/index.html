@@ -1,0 +1,149 @@
+<!--
+Coded for fun and with love by: Michael Lancaster (twitter: @weblancaster) & (github: @weblancaster)
+Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
+-->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Lollagram - Experience Lollapalooza through Lollagram. Music. Photography. Chicago.</title>
+
+	<!-- metas -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta property="og:title" content="Lollagram - Experience Lollapalooza through Lollagram. Music. Photography. Chicago.">
+	<meta property="og:site_name" content="lollagram">
+	<meta property="og:url" content="lollagram.com">
+	<meta property="og:image" content="/images/logo.png">
+	<meta property="og:description" content="Lollagram is a labor of love that’s designed to help you keep track of the Lollapalooza experience, through the eyes (or, more accurately, snapshots) of music lovers on the ground at Grant Park. Lollagram takes advantage of the Instagram API and aggregates the moments at Lollapalooza, creating a visual record of the bands, food, people, and city that make up this great musical tradition. With 40 million photos being uploaded to Instagram each day, we're excited to present snapshots from Lollapalooza 2013.">
+	
+	<!-- fav icon -->
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!-- css -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/app.css">
+
+	<!-- script -->
+	<script src="/js/socket.io.min.js"></script>
+	<script src="/js/jquery.1.9.min.js"></script>
+	<script src="/js/handlebarsjs.1.0.min.js"></script>
+
+	<!--[if lt IE 9]>
+	<script src="/js/html5shiv.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	<!--[if lt IE 9]>
+      <p class="browsehappy Hfwb" style="color: black; font-size: 22px;">You are using an <strong style="color: #999;">outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience on Lollagram.</p>
+  <![endif]-->
+
+	<!--[if lt IE 9]>
+      <div class="Hdn">
+  <![endif]-->
+
+	<!--********************************
+	ABOUT
+	*********************************-->
+	<div class="aboutWrap active">
+		<div id="about">
+			<span class="btClose Hdb Hfr" id="js-closeAbout">
+				<a href="#close" title="close about" class="Hir">close</a>
+			</span>
+			<h1 class="tit">Experience Lollapalooza through Lollagram</h1>
+			<p class="desc">Music. Photography. Chicago.</p>
+			<p class="desc">With <a href="http://lollapalooza.com" title="Lollapalooza">Lollapalooza</a> upon us, the <a href="http://golinHarris.com" title="GolinHarris">GolinHarris</a> team brings you (yet again) Lollagram! Lollapalooza is one of the world’s largest music festivals and it takes place just down the street from where Al Golin started our company nearly 60 years ago.</p>
+
+			<p class="desc">Lollagram is a labor of love that’s designed to help you keep track of the Lollapalooza experience, through the eyes (or, more accurately, snapshots) of music lovers on the ground at Grant Park. Lollagram takes advantage of the Instagram API and aggregates the moments at Lollapalooza, creating a visual record of the bands, food, people, and city that make up this great musical tradition. With 45 million photos being uploaded to Instagram each day, we're excited to present snapshots from Lollapalooza 2013.</p>
+
+			<p class="desc"> <strong class="Hfwb">Lollagram</strong> will actively 'call' photos from the Instagram service and waits for a response, searching for photos and posts which include the word Lollapalooza. If you're attending Lollapalooza this year and will be sharing photos via Instagram, we hope you’ll include #Lollapalooza so your photos will be featured on <strong class="Hfwb">Lollagram!</strong></p>
+
+			<p class="desc">If you like Lollagram, please help us spread the word through the sharing tools on the site homepage. Enjoy Lollapalooza 2013!</p>
+
+			<p class="desc">-Your Friends at <a href="http://golinHarris.com" title="GolinHarris">GolinHarris</a></p>
+		</div>
+	</div>
+
+	<!--********************************
+	TOP
+	*********************************-->
+	<div class="topFill"></div>
+
+	<!--********************************
+	ASIDE
+	*********************************-->
+	<aside id="aside">
+		<header>
+			<h1 class="logo"><a href="#" title="Lollagram - Lollapalooza on instagram everywhere" class="Hdb"><img src="/images/logo-square.png" alt="Lollagram - Lollapalooza on instagram everywhere" class="Hdib"></a></h1>
+		</header>
+	
+		<!-- mobile nav button -->
+		<a href="#mobile-navigation" class="mobNav" id="js-mobNav">
+			<span class="iconBar"></span>
+			<span class="iconBar"></span>
+			<span class="iconBar"></span>
+		</a>
+		<!-- mobile nav button / end -->
+		
+		<nav class="nav">
+			<ul>
+				<li>
+					<a href="#" title="about" class="extra" id="js-btAbout"> about </a>
+				</li>
+			</ul>
+		</nav>
+	</aside>
+
+	<!--********************************
+	IMAGE WRAPPER - content
+	*********************************-->
+	<div id="imgContent" class="Hcf"></div>
+
+	<!--********************************
+	FOOTER
+	*********************************-->
+	<footer id="footer">
+		<div class="bottom">
+			<ul class="socialShare Hfl">
+				<li><a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://lollagram.com&p[images][0]=http://lollagram.herokuapp.com//images/logo.png&p[title]=Experience%20Lollapalooza%20through%20Lollagram&p[summary]=Lollagram%20is%20a%20labor%20of%20love%20that%E2%80%99s%20designed%20to%20help%20you%20keep%20track%20of%20the%20Lollapalooza%20experience,%20through%20the%20eyes%20(or,%20more%20accurately,%20snapshots)%20of%20music%20lovers%20on%20the%20ground%20at%20Grant%20Park.%20Lollagram%20takes%20advantage%20of%20the%20Instagram%20API%20and%20aggregates%20the%20moments%20at%20Lollapalooza,%20creating%20a%20visual%20record%20of%20the%20bands,%20food,%20people,%20and%20city%20that%20make%20up%20this%20great%20musical%20tradition.%20With%2040%20million%20photos%20being%20uploaded%20to%20Instagram%20each%20day,%20we're%20excited%20to%20present%20snapshots%20from%20Lollapalooza%202013." class="icon icon-fb" target="_blank"></a></li>
+				<li><a href="http://twitter.com/home?status=EExperience%20Lollapalooza%20through%20Lollagram.%20Music.%20Photography.%20Chicago%20on%20www.lollagram.com" class="icon icon-tt" target="_blank"></a></li>
+				<li><a href="https://plus.google.com/share?url=http://lollagram.com" class="icon icon-g" target="_blank"></a></li>
+				<li><a href="mailto:?subject=Live%20Lolla%20Pics%20on%20Lollagram.com&body=Check%20out%20this%20site%20for%20real%20time%20photos%20from%20Lollapalooza%202013.%20http%3A%2F%2Fwww.lollagram.com" class="icon icon-email" target="_blank"></a></li>
+			</ul>
+			<a href="http://golinharris.com" title="" target="_blank" class="Hfr bottomLogo">
+				<img src="/images/gh-logo.png" alt="Lovingly create by Golinharris feat. Michael Lancaster" class="Hdb">
+			</a>
+		</div>
+	</footer>
+
+	<!--********************************
+	TEMPLATES
+	*********************************-->
+	<script id="firstShow-tpl" type="text/x-handlebars-template">
+	{{#each firstShow}}
+		<a href="{{link}}" title="{{caption.text}}" target="_blank">
+			<img src="{{images.standard_resolution.url}}" alt="{{caption.text}}" />
+		</a>
+	{{/each}}
+	</script>
+
+	<script id="mostRecent-tpl" type="text/x-handlebars-template">
+		<a href="{{data.1.link}}" title="{{data.1.caption.text}}" target="_blank" class="Hvh">
+			<img src="{{data.1.images.standard_resolution.url}}" alt="{{data.1.caption.text}}" />
+		</a>
+	</script>
+
+	<!-- CALL MAIN APP SCRIPT -->
+	<script src="/js/app.js"></script>
+
+	<!--[if lt IE 9]>
+    </div>
+  <![endif]-->
+</body>
+</html>
