@@ -37,7 +37,7 @@ Instagram.set('maxSockets', 10);
  */
 Instagram.subscriptions.subscribe({
   object: 'tag',
-  object_id: 'lollapalooza',
+  object_id: 'picobunny',
   aspect: 'media',
   callback_url: 'http://YOUR_URL.com/callback',
   type: 'subscription',
@@ -51,7 +51,7 @@ Instagram.subscriptions.subscribe({
  */
 Instagram.subscriptions.subscribe({
   object: 'tag',
-  object_id: 'lollapalooza2013',
+  object_id: 'ootd',
   aspect: 'media',
   callback_url: 'http://YOUR_URL.com/callback',
   type: 'subscription',
@@ -65,7 +65,7 @@ Instagram.subscriptions.subscribe({
  */
 Instagram.subscriptions.subscribe({
   object: 'tag',
-  object_id: 'lolla2013',
+  object_id: 'nba',
   aspect: 'media',
   callback_url: 'http://YOUR_URL.com/callback',
   type: 'subscription',
