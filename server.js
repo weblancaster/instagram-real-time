@@ -37,7 +37,7 @@ Instagram.set('maxSockets', 10);
  */
 Instagram.subscriptions.subscribe({
   object: 'tag',
-  object_id: 'picobunny',
+  object_id: 'ootd',
   aspect: 'media',
   callback_url: 'http://instagram-real-time.herokuapp.com/callback.html',
   type: 'subscription',
@@ -65,7 +65,7 @@ Instagram.subscriptions.subscribe({
  */
 Instagram.subscriptions.subscribe({
   object: 'tag',
-  object_id: 'nba',
+  object_id: 'ootd',
   aspect: 'media',
   callback_url: 'http://instagram-real-time.herokuapp.com/callback.html',
   type: 'subscription',
@@ -110,7 +110,7 @@ app.get("/views", function(req, res){
  */
 io.sockets.on('connection', function (socket) {
   Instagram.tags.recent({ 
-      name: 'picobunny',
+      name: 'ootd',
       complete: function(data) {
         socket.emit('firstShow', { firstShow: data });
       }
@@ -133,7 +133,7 @@ app.post('/callback', function(req, res) {
     // Grab the hashtag "tag.object_id"
     // concatenate to the url and send as a argument to the client side
     data.forEach(function(tag) {
-      var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id=479edbf0004c42758987cf0244afd3ef';
+      var url = 'https://api.instagram.com/v1/tags/' + tag.object_id + '/media/recent?client_id=f0ba06d272b14a9684be7544addb413e';
       sendMessage(url);
 
     });
