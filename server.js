@@ -37,10 +37,10 @@ Instagram.set('maxSockets', 10);
  */
 Instagram.subscriptions.subscribe({
   object: 'tag',
-  object_id: 'throwback',
+  object_id: 'picobunny',
   aspect: 'media',
   callback_url: 'http://instagram-real-time.herokuapp.com/callback',
-  type: 'picobunny',
+  type: 'subscription',
   id: '#'
 });
 
