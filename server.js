@@ -26,7 +26,7 @@ var clientID = 'f0ba06d272b14a9684be7544addb413e',
  */
 Instagram.set('client_id', clientID);
 Instagram.set('client_secret', clientSecret);
-Instagram.set('callback_url', 'http://instagram-real-time.herokuapp.com/callback.html');
+Instagram.set('callback_url', 'http://instagram-real-time.herokuapp.com/callback');
 Instagram.set('redirect_uri', 'http://instagram-real-time.herokuapp.com');
 Instagram.set('maxSockets', 10);
 
@@ -39,7 +39,7 @@ Instagram.subscriptions.subscribe({
   object: 'tag',
   object_id: 'throwback',
   aspect: 'media',
-  callback_url: 'http://instagram-real-time.herokuapp.com/callback.html',
+  callback_url: 'http://instagram-real-time.herokuapp.com/callback',
   type: 'subscription',
   id: '#'
 });
@@ -53,7 +53,7 @@ Instagram.subscriptions.subscribe({
   object: 'tag',
   object_id: 'throwback',
   aspect: 'media',
-  callback_url: 'http://instagram-real-time.herokuapp.com/callback.html',
+  callback_url: 'http://instagram-real-time.herokuapp.com/callback',
   type: 'subscription',
   id: '#'
 });
@@ -67,7 +67,7 @@ Instagram.subscriptions.subscribe({
   object: 'tag',
   object_id: 'throwback',
   aspect: 'media',
-  callback_url: 'http://instagram-real-time.herokuapp.com/callback.html',
+  callback_url: 'http://instagram-real-time.herokuapp.com/callback',
   type: 'subscription',
   id: '#'
 });
