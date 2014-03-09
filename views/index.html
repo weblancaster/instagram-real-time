@@ -127,15 +127,15 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 	*********************************-->
 	<script id="firstShow-tpl" type="text/x-handlebars-template">
 	{{#each firstShow}}
-		<a href="{{link}}" title="{{caption.text}}" target="_blank">
-			<img src="{{images.standard_resolution.url}}" alt="{{caption.text}}" />
+		<a href="{{link}}" title="{{caption.text}}">
+			<img src="{{images.standard_resolution.url}}" alt="{{caption.text}}" target="_blank"/>
 		</a>
 	{{/each}}
 	</script>
 
 	<script id="mostRecent-tpl" type="text/x-handlebars-template">
-		<a href="{{data.1.link}}" title="{{data.1.caption.text}}" target="_blank" class="Hvh">
-			<img src="{{data.1.images.standard_resolution.url}}" alt="{{data.1.caption.text}}" />
+		<a href="{{data.1.link}}" title="{{data.1.caption.text}}" class="Hvh">
+			<img src="{{data.1.images.standard_resolution.url}}" alt="{{data.1.caption.text}}" target="_blank"/>
 		</a>
 	</script>
 
