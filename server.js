@@ -37,7 +37,7 @@ Instagram.set('maxSockets', 10);
  */
 Instagram.subscriptions.subscribe({
   object: 'tag',
-  object_id: 'picobunny',
+  object_id: 'throwback',
   aspect: 'media',
   callback_url: 'http://instagram-real-time.herokuapp.com/callback.html',
   type: 'subscription',
@@ -51,7 +51,7 @@ Instagram.subscriptions.subscribe({
  */
 Instagram.subscriptions.subscribe({
   object: 'tag',
-  object_id: 'picobunny',
+  object_id: 'throwback',
   aspect: 'media',
   callback_url: 'http://instagram-real-time.herokuapp.com/callback.html',
   type: 'subscription',
@@ -65,7 +65,7 @@ Instagram.subscriptions.subscribe({
  */
 Instagram.subscriptions.subscribe({
   object: 'tag',
-  object_id: 'picobunny',
+  object_id: 'throwback',
   aspect: 'media',
   callback_url: 'http://instagram-real-time.herokuapp.com/callback.html',
   type: 'subscription',
@@ -110,7 +110,7 @@ app.get("/views", function(req, res){
  */
 io.sockets.on('connection', function (socket) {
   Instagram.tags.recent({ 
-      name: 'picobunny',
+      name: 'throwback',
       complete: function(data) {
         socket.emit('firstShow', { firstShow: data });
       }
