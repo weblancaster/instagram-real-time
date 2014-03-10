@@ -87,11 +87,27 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 	</script>
 
 	<script id="mostRecent-tpl" type="text/x-handlebars-template">
-		<div class="col-md-4 col-md-offset-8">
+		<div class="photoframe">
+
+			<div class="photoframe2">
+			<img src="{{data.1.caption.from.profile_picture}}" class="profilepic" />
+			<h1 class="username">{{data.1.caption.from.username}}</h1>
+			</div>
+
+			<div class="photoframe1"> 
 			<a href="{{data.1.images.standard_resolution.url}}" title="{{data.1.caption.text}}" class="Hvh" target="_blank">
-				<img src="{{data.1.images.standard_resolution.url}}" alt="{{data.1.caption.text}}" />
+			<img src="{{data.1.images.standard_resolution.url}}" alt="{{data.1.caption.text}}" />
 			</a>
-		</div>
+			</div>
+
+			<div class="photoframe3">
+			<img src="/images/speechbubble.png" class="speech"/>
+			<p class="commentname">{{data.1.caption.from.username}}</p>
+			<p class="firstcomment">{{data.1.caption.text}}</p>
+			</div>
+			
+		</div>	
+
 	</script>
 
 	<!-- CALL MAIN APP SCRIPT -->
