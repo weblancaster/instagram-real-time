@@ -504,7 +504,7 @@ EWAN CSS
 
 .profilepic
 {
-width:15!important;
+width:15%!important;
 height:20%;
 display:inline!important;
 }
@@ -517,11 +517,9 @@ border: 1em solid #FFF;
 background:#FFF;
 }
 
-.photoframe2, 
+.photoframe2
 {
-background:#FFF;
-width:100%;
-margin:0 auto 1em auto;
+margin-bottom: 1em;
 }
 
 .photoframe3
@@ -542,8 +540,8 @@ color: rgb(72,127,169);
 
 .speech
 {
-width:5%;
-display:inline;
+width:5%!important;
+display:inline!important;
 margin-right: 0.3em;  
 }
 
