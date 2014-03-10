@@ -65,19 +65,19 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 	{{#each firstShow}}
 		<div class="photoframe">
 
+			<div class="photoframe2">
+			<img src="{{caption.from.profile_picture}}" class="profilepic" />
+			<h1 class="username">{{caption.from.username}}</h1>
+			</div>
+
 			<div class="photoframe1"> 
 			<a href="{{images.standard_resolution.url}}" title="{{caption.text}}" target="_blank">
 			<img src="{{images.standard_resolution.url}}" alt="{{caption.text}}" />
 			</a>
 			</div>
 
-			<div class="photoframe2">
-			<img src="{{caption.from.profile_picture}}" class="profilepic" />
-			<h1 class="username">{{caption.from.username}}</h1>
-			</div>
-
 			<div class="photoframe3">
-			<p>{{caption.text}}</p>
+			<img src="/images/speechbubble.png" class="speech"/><p>{{caption.text}}</p>
 			</div>
 			
 		</div>		
