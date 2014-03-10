@@ -55,7 +55,7 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 	<!--********************************
 	IMAGE WRAPPER - content
 	*********************************-->
-	<div id="imgContent" class="Hcf gallerycontainer"></div>
+	<div id="imgContent" class="Hcf row"></div>
 
 
 	<!--********************************
@@ -63,7 +63,7 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 	*********************************-->
 	<script id="firstShow-tpl" type="text/x-handlebars-template">
 	{{#each firstShow}}
-		<div class="galleryimage">
+		<div class="col-md-4 col-md-offset-8">
 			<a href="{{images.standard_resolution.url}}" title="{{caption.text}}" target="_blank">
 				<img src="{{images.standard_resolution.url}}" alt="{{caption.text}}" />
 			</a>
@@ -72,7 +72,7 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 	</script>
 
 	<script id="mostRecent-tpl" type="text/x-handlebars-template">
-		<div class="galleryimage">
+		<div class="col-md-4 col-md-offset-8">
 			<a href="{{data.1.images.standard_resolution.url}}" title="{{data.1.caption.text}}" class="Hvh" target="_blank">
 				<img src="{{data.1.images.standard_resolution.url}}" alt="{{data.1.caption.text}}" />
 			</a>

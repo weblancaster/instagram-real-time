@@ -24,7 +24,7 @@ html {
 /* font-family: 'Open Sans', sans-serif; */
 
 body {
-	background: url(../images/bg.jpg) repeat 0 0;
+	background: #000;
   font-size: 62.5%;
   font-family: 'Open Sans', sans-serif;
   overflow-x: hidden;
