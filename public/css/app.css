@@ -497,3 +497,13 @@ a:hover {
   -o-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
 }
+
+/***********
+EWAN CSS
+************/
+
+.profilepic
+{
+width:20%;
+height:20%; 
+}
