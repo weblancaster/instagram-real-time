@@ -37,7 +37,7 @@ Instagram.set('maxSockets', 10);
  */
 Instagram.subscriptions.subscribe({
   object: 'tag',
-  object_id: 'picobunny',
+  object_id: 'nba',
   aspect: 'media',
   callback_url: 'http://instagram-real-time.herokuapp.com/callback',
   type: 'subscription',
