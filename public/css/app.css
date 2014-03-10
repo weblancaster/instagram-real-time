@@ -504,9 +504,8 @@ EWAN CSS
 
 .profilepic
 {
-width:15%!important;
+width:15!important;
 height:20%;
-padding-top: 1em;
 display:inline!important;
 }
 
@@ -518,19 +517,37 @@ border: 1em solid #FFF;
 background:#FFF;
 }
 
-.photoframe2, .photoframe3
+.photoframe2, 
 {
 background:#FFF;
-width:30%;
+width:100%;
+margin:0 auto 1em auto;
+}
+
+.photoframe3
+{
+background:#FFF;
+width:100%;
 margin:0 auto;
-border: 1em solid #FFF;
 }
 
 .username
 {
 display: inline-block;
-position: relative;
-bottom: 10px;
-margin-top: 10px;
+margin-top: 0px;
 margin-left: 0.2em;
+font-size: 1.5em;
+color: rgb(72,127,169);
+}
+
+.speech
+{
+width:5%;
+display:inline;
+margin-right: 0.3em;  
+}
+
+p.firstcomment
+{
+display:inline;  
 }
