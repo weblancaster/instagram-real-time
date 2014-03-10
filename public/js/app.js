@@ -50,7 +50,7 @@
                     dataType: 'jsonp'
                 }).done(function (data) {
                     self.renderTemplate(data);
-                }); 
+                });
             });
         },
 
