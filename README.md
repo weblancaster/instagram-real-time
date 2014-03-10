@@ -11,6 +11,8 @@ Lollagram is a labor of love that’s designed to help you keep track of the Lol
 
 Blog post on <a href="http://www.bymichaellancaster.com/blog/how-i-built-lollagram-lollapalooza-instagram-real-time-api/" title="blog post" target="_blank">my website</a>
 
+Step-by-step <a href="http://git.io/Ry1fEA" title="step by step" target="_blank">http://git.io/Ry1fEA</a>
+
 ## Technologies
 - NodeJS/ExpressJS.
 - Socket.IO
