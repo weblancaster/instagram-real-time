@@ -65,12 +65,9 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 	{{#each firstShow}}
 		<div class="row">
 			<div class="col-md-8">
-				<h1>
-				{{data.filter}}
-				</h1>
-				<p>
-				{{caption.text}}
-				</p>
+				<div>{{caption.from.profile_picture}}</div>
+				<h1>{{caption.from.username}}</h1>
+				<p>{{caption.text}}</p>
 			</div>
 
 			<div class="col-md-4">
