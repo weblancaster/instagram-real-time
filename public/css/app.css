@@ -506,7 +506,8 @@ EWAN CSS
 {
 width:25%!important;
 height:20%;
-padding:1em; 
+padding-top: 1em;
+display:inline;
 }
 
 .photoframe
@@ -516,9 +517,18 @@ margin:0 auto;
 border: 1em solid #FFF;  
 }
 
-.photoframe2
+.photoframe2, .photoframe3
 {
+background:#FFF;
 width:30%;
 margin:0 auto;
 border: 1em solid #FFF;  
+}
+
+.username
+{
+display: inline-block;
+position: relative;
+bottom: 10px;
+margin-top: 10px;
 }
