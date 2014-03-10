@@ -219,7 +219,7 @@ a:hover {
 #imgContent img { display: block; }
 #imgContent a {
 	float: left;
-	width: 16.640625%;
+	width: 100%;
 }
 #imgContent img {
 	width: 100%;

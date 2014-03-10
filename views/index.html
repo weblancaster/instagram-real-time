@@ -63,11 +63,19 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 	*********************************-->
 	<script id="firstShow-tpl" type="text/x-handlebars-template">
 	{{#each firstShow}}
-		<div class="col-md-4 col-md-offset-8">
-			<a href="{{images.standard_resolution.url}}" title="{{caption.text}}" target="_blank">
-				<img src="{{images.standard_resolution.url}}" alt="{{caption.text}}" />
-			</a>
-		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<h1>
+				data.filter
+				</h1>
+			</div>
+
+			<div class="col-md-4">
+				<a href="{{images.standard_resolution.url}}" title="{{caption.text}}" target="_blank">
+					<img src="{{images.standard_resolution.url}}" alt="{{caption.text}}" />
+				</a>
+			</div>
+		</div>	
 	{{/each}}
 	</script>
 
