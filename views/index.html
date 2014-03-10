@@ -55,7 +55,7 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 	<!--********************************
 	IMAGE WRAPPER - content
 	*********************************-->
-	<div id="imgContent" class="Hcf row" style="margin:0;"></div>
+	<div id="imgContent" class="Hcf row" style="margin:0; background:#000;"></div>
 
 
 	<!--********************************
@@ -65,18 +65,18 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 	{{#each firstShow}}
 		<div>
 
-			<div>
+			<div class="photoframe">
 			<a href="{{images.standard_resolution.url}}" title="{{caption.text}}" target="_blank">
 			<img src="{{images.standard_resolution.url}}" alt="{{caption.text}}" />
 			</a>
 			</div>
 
-			<div>
+			<div class="photoframe2">
 			<img src="{{caption.from.profile_picture}}" class="profilepic" />
 			<h1>{{caption.from.username}}</h1>
 			</div>
 
-			<div>
+			<div class="photoframe3">
 			<p>{{caption.text}}</p>
 			</div>
 			
