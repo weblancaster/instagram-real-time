@@ -50,6 +50,7 @@
                     dataType: 'jsonp'
                 }).done(function (data) {
                     self.renderTemplate(data);
+                    console.log(data[2].likes.count);
                 });
             });
         },
@@ -71,11 +72,11 @@
 
                 imgWrap.prepend(result);
 
-                noofphoto = $('#imgContent .photoframe').size();
-                console.log(noofphoto);
+                //noofphoto = $('#imgContent .photoframe').size();
+                //console.log(noofphoto);
 
-                nooflikes = data.data[2].likes.count;
-                console.log(nooflikes);
+                //nooflikes = data.data[2].likes.count;
+                //console.log(nooflikes);
 
                 last = $('#imgContent .photoframe:first-child');
                 lastSrc = $('#imgContent .photoframe:first-child').find('.photoframe1 img').attr('src');
@@ -113,8 +114,8 @@
         mostRecent: function() {
             socket.on('firstShow', function (data) {
                 var clean = $('imgContent').find('.photoframe').remove();
-                var countoflikes = data.data[2].likes.count;
-                console.log(countoflikes);
+                //var countoflikes = data.data[2].likes.count;
+                //console.log(countoflikes);
 
                 var
                     query = data,
