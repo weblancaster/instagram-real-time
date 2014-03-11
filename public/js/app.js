@@ -74,7 +74,7 @@
                 noofphoto = $('#imgContent .photoframe').size();
                 console.log(noofphoto);
 
-                nooflikes = data.data[0].likes.count;
+                nooflikes = data.data[15].likes.count;
                 console.log(nooflikes);
 
                 last = $('#imgContent .photoframe:first-child');
