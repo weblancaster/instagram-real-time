@@ -58,7 +58,7 @@
          * [Render the images on the page and check for layout resize]
          */
         renderTemplate: function(data) {
-            var lastAnimate, lastSrc, nextSrc, last,
+            var noofphoto, lastAnimate, lastSrc, nextSrc, last,
                 current = data.data[0].images.standard_resolution.url,
                 w = $(document).width();
 
@@ -71,32 +71,35 @@
 
                 imgWrap.prepend(result);
 
-                last = $('#imgContent a:first-child');
-                lastSrc = $('#imgContent a:first-child').find('img').attr('src');
-                nextSrc = $('#imgContent a:nth-child(2)').find('img').attr('src');
+                noofphoto = $('#imgContent .photoframe').size();
+                console.log(noofphoto);
+
+                last = $('#imgContent .photoframe:first-child');
+                lastSrc = $('#imgContent .photoframe:first-child').find('.photoframe1 img').attr('src');
+                nextSrc = $('#imgContent .photoframe:nth-child(2)').find('.photoframe1 img').attr('src'); //start at 1.
 
                 if( lastSrc === nextSrc ) {
-                    last.remove();
+                    last.remove(); //remove the first one
                 }
 
-                last = $('#imgContent').find(':first-child').removeClass('Hvh');
+                last = $('#imgContent').find('.photoframe:first-child').removeClass('Hvh');
 
                 if( w >= 900 ) {
-                    lastAnimate = $('#imgContent').find(':nth-child(2)').addClass('animated fadeInLeft');
+                    lastAnimate = $('#imgContent').find('.photoframe:nth-child(2)').addClass('animated fadeInLeft');
                 }
 
                 if( w <= 900 ) {
-                    lastAnimate = $('#imgContent').find(':nth-child(1)').addClass('animated fadeInDown');
+                    lastAnimate = $('#imgContent').find('.photoframe:nth-child(1)').addClass('animated fadeInDown');
                 }
 
                 $(window).resize(function() {
                     var w = $(document).width();
                     if( w >= 900 ) {
-                        lastAnimate = $('#imgContent').find(':nth-child(2)').addClass('animated fadeInLeft');
+                        lastAnimate = $('#imgContent').find('.photoframe:nth-child(2)').addClass('animated fadeInLeft');
                     }
 
                     if( w <= 900 ) {
-                        lastAnimate = $('#imgContent').find(':nth-child(1)').addClass('animated fadeInDown');
+                        lastAnimate = $('#imgContent').find('.photoframe:nth-child(1)').addClass('animated fadeInDown');
                     }
                 });
         },
@@ -106,9 +109,10 @@
          */
         mostRecent: function() {
             socket.on('firstShow', function (data) {
-                var clean = $('imgContent').find('a').remove();
+                var clean = $('imgContent').find('.photoframe').remove();
                 var
                     query = data,
+                    /*compile handlebar template*/
                     source = $('#firstShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate(query),
