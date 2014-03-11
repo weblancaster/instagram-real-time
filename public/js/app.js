@@ -58,7 +58,7 @@
          * [Render the images on the page and check for layout resize]
          */
         renderTemplate: function(data) {
-            var noofphoto, lastAnimate, lastSrc, nextSrc, last,
+            var nooflikes, noofphoto, lastAnimate, lastSrc, nextSrc, last,
                 current = data.data[0].images.standard_resolution.url,
                 w = $(document).width();
 
@@ -73,6 +73,9 @@
 
                 noofphoto = $('#imgContent .photoframe').size();
                 console.log(noofphoto);
+
+                nooflikes = data.data[0].likes.count;
+                console.log(nooflikes);
 
                 last = $('#imgContent .photoframe:first-child');
                 lastSrc = $('#imgContent .photoframe:first-child').find('.photoframe1 img').attr('src');
