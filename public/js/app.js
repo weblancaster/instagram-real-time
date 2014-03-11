@@ -50,7 +50,7 @@
                     dataType: 'jsonp'
                 }).done(function (data) {
                     self.renderTemplate(data);
-                    console.log(data[2].likes.count);
+                    console.log(data.data[2].likes.count);
                 });
             });
         },
