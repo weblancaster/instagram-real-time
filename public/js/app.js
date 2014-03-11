@@ -74,7 +74,7 @@
                 noofphoto = $('#imgContent .photoframe').size();
                 console.log(noofphoto);
 
-                nooflikes = data.data[15].likes.count;
+                nooflikes = data.data[2].likes.count;
                 console.log(nooflikes);
 
                 last = $('#imgContent .photoframe:first-child');
@@ -113,6 +113,9 @@
         mostRecent: function() {
             socket.on('firstShow', function (data) {
                 var clean = $('imgContent').find('.photoframe').remove();
+                var countoflikes = data.data[2].likes.count;
+                console.log(countoflikes);
+
                 var
                     query = data,
                     /*compile handlebar template*/
