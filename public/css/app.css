@@ -24,7 +24,7 @@ html {
 /* font-family: 'Open Sans', sans-serif; */
 
 body {
-	background: #000;
+  background: url(../images/bg.jpg) repeat 0 0;
   font-size: 62.5%;
   font-family: 'Open Sans', sans-serif;
   overflow-x: hidden;
@@ -37,34 +37,34 @@ img {
 ul, 
 ol, 
 li {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-	margin: 0;
+  margin: 0;
 }
 
 a {
-	text-decoration: none;
-	color: #000;
+  text-decoration: none;
+  color: #000;
 }
 a:hover {
-	color: #fcbc34;
-	text-decoration: none;
+  color: #fcbc34;
+  text-decoration: none;
 }
 
 /* ==========================================================================
    UI styles: UI Oriented
    ========================================================================== */
 .icon {
-	display: block;
+  display: block;
 }
 .icon.bt-close {
-	background: url(../images/bt-close.png) no-repeat 0 0;
-	width: 42px;
-	height: 41px;
+  background: url(../images/bt-close.png) no-repeat 0 0;
+  width: 42px;
+  height: 41px;
 }
 
 /* ==========================================================================
@@ -75,24 +75,24 @@ a:hover {
 * @top fill
 ************/
 .topFill {
-	position: fixed;
-	top: 0;
+  position: fixed;
+  top: 0;
   left: 13.5%;
-	background: url(../images/top-fill.jpg) repeat-x 0 0;
+  background: url(../images/top-fill.jpg) repeat-x 0 0;
   background-size: cover;
-	width: 100%;
-	height: 8px;
-	z-index: 45;
+  width: 100%;
+  height: 8px;
+  z-index: 45;
 }
 
 /***********
 * @aside
 ************/
 #aside {
-	position: fixed;
-	left: 0;
-	width: 16.640625%;
-	z-index: 40;
+  position: fixed;
+  left: 0;
+  width: 16.640625%;
+  z-index: 40;
   border-top: 8px solid #f34e52;
 }
 
@@ -100,11 +100,11 @@ a:hover {
 * @logo
 ************/
 .logo {
-	background: #fff;
+  background: #fff;
 }
 .logo img {
   display: block;
-	width: 100%;
+  width: 100%;
 }
 
 /***********
@@ -112,23 +112,23 @@ a:hover {
 ************/
 .nav {
   position: relative;
-	background: rgba(255,255,255, 0.9);
-	-moz-box-shadow: inset 0 6px 10px -7px #000;
-	-webkit-box-shadow: inset 0 6px 10px -7px #000;
-	box-shadow: inset 0 6px 10px -7px #000;
+  background: rgba(255,255,255, 0.9);
+  -moz-box-shadow: inset 0 6px 10px -7px #000;
+  -webkit-box-shadow: inset 0 6px 10px -7px #000;
+  box-shadow: inset 0 6px 10px -7px #000;
 }
 
 .nav a {
-	display: block;
-	padding: 2% 0 2% 12%;
-	font-size: 18px;
-	font-size: 1.1rem;
+  display: block;
+  padding: 2% 0 2% 12%;
+  font-size: 18px;
+  font-size: 1.1rem;
 }
 .nav .latest { 
-	font-weight: bold;
+  font-weight: bold;
 }
 .nav .extra { 
-	color: #aaaaa9;
+  color: #aaaaa9;
 }
 
 /* mobile nav */
@@ -209,39 +209,39 @@ a:hover {
 * @Image wrapper
 ************/
 #imgContent {
-	width: 100%;
+  width: 100%;
 }
 #imgContent .animated {
-	position: relative;
-	z-index: 10;
+  position: relative;
+  z-index: 10;
 }
 #imgContent a, 
 #imgContent img { display: block; }
 #imgContent a {
-	float: left;
-	width: 100%;
+  float: left;
+  width: 16.640625%;
 }
 #imgContent img {
-	width: 100%;
+  width: 100%;
 }
 
 /***********
 * @footer
 ************/
 #footer {
-	position: fixed;
-	bottom: 0;
-	background: url(../images/bg-footer.png) no-repeat 0;
-	background-size: cover;
-	width: 100%;
-	height: 302px;
-	z-index: 30;
-	pointer-events: none;
+  position: fixed;
+  bottom: 0;
+  background: url(../images/bg-footer.png) no-repeat 0;
+  background-size: cover;
+  width: 100%;
+  height: 302px;
+  z-index: 30;
+  pointer-events: none;
 }
 #footer .bottom {
   width: 100%;
   height: 50px;
-	position: absolute;
+  position: absolute;
   bottom: 5px;
   pointer-events: auto;
 }
@@ -496,63 +496,4 @@ a:hover {
   -moz-animation-name: fadeInLeft;
   -o-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
-}
-
-/***********
-EWAN CSS
-************/
-
-.profilepic
-{
-width:15%!important;
-height:20%;
-display:inline!important;
-}
-
-.photoframe
-{
-width:30%;
-margin:0 auto 2em auto;
-border: 1em solid #FFF;
-background:#FFF;
-}
-
-.photoframe2
-{
-margin-bottom: 1em;
-}
-
-.photoframe3
-{
-background:#FFF;
-width:100%;
-margin:0 auto;
-}
-
-.username
-{
-display: inline-block;
-margin-top: 0px;
-margin-left: 0.2em;
-font-size: 1.5em;
-color: rgb(72,127,169);
-}
-
-.speech
-{
-width:5%!important;
-display:inline!important;
-margin-right: 0.3em;  
-}
-
-p.commentname
-{
-color: rgb(72,127,169);
-display:inline-block;
-margin-top: 1em;
-}
-
-p.firstcomment
-{
-display:inline-block;
 }

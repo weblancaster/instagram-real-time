@@ -47,11 +47,6 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
   <![endif]-->
 
 
-	<!--********************************
-	TOP
-	*********************************-->
-	<div class="topFill"></div>
-
 
 	<!--********************************
 	IMAGE WRAPPER - content
@@ -59,27 +54,18 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 	<div id="imgContent" class="Hcf"></div>
 
 	<!--********************************
-	FOOTER
-	*********************************-->
-	<footer id="footer">
-		<div class="bottom">
-			
-		</div>
-	</footer>
-
-	<!--********************************
 	TEMPLATES
 	*********************************-->
 	<script id="firstShow-tpl" type="text/x-handlebars-template">
 	{{#each firstShow}}
-		<a href="{{link}}" title="{{caption.text}}" target="_blank">
+		<a href="{{images.standard_resolution.url}}" title="{{caption.text}}" target="_blank">
 			<img src="{{images.standard_resolution.url}}" alt="{{caption.text}}" />
 		</a>
 	{{/each}}
 	</script>
 
 	<script id="mostRecent-tpl" type="text/x-handlebars-template">
-		<a href="{{data.1.link}}" title="{{data.1.caption.text}}" target="_blank" class="Hvh">
+		<a href="{{data.1.images.standard_resolution.url}}" title="{{data.1.caption.text}}" target="_blank" class="Hvh">
 			<img src="{{data.1.images.standard_resolution.url}}" alt="{{data.1.caption.text}}" />
 		</a>
 	</script>
