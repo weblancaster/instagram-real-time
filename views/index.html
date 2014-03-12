@@ -20,21 +20,16 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 	<meta property="og:url" content="">
 	<meta property="og:image" content="">
 	<meta property="og:description" content="">
-	
-	<!-- fav icon -->
-	<link rel="shortcut icon" href="">
+
 
 	<!-- css -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/css/app.css">
-	<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
 
 	<!-- script -->
 	<script src="/js/socket.io.min.js"></script>
 	<script src="/js/jquery.1.9.min.js"></script>
 	<script src="/js/handlebarsjs.1.0.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
 
 	<!--[if lt IE 9]>
 	<script src="/js/html5shiv.js"></script>
@@ -53,65 +48,40 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 
 
 	<!--********************************
+	TOP
+	*********************************-->
+	<div class="topFill"></div>
+
+
+	<!--********************************
 	IMAGE WRAPPER - content
 	*********************************-->
-	<div id="imgContent" class="Hcf row" style="margin:0; background:#000;"></div>
+	<div id="imgContent" class="Hcf"></div>
 
+	<!--********************************
+	FOOTER
+	*********************************-->
+	<footer id="footer">
+		<div class="bottom">
+			
+		</div>
+	</footer>
 
 	<!--********************************
 	TEMPLATES
 	*********************************-->
 	<script id="firstShow-tpl" type="text/x-handlebars-template">
 	{{#each firstShow}}
-		<div class="photoframe">
-			
-			<span>Number of likes is {{likes.count}}</span>
-			<span>Number of comments is {{comments.count}}</span>
-			<span>Time created is {{created_time}}</span>
-
-			<div class="photoframe2">
-			<img src="{{caption.from.profile_picture}}" class="profilepic" />
-			<h1 class="username">{{caption.from.username}}</h1>
-			</div>
-
-			<div class="photoframe1"> 
-			<a href="{{images.standard_resolution.url}}" title="{{caption.text}}" target="_blank">
+		<a href="{{link}}" title="{{caption.text}}" target="_blank">
 			<img src="{{images.standard_resolution.url}}" alt="{{caption.text}}" />
-			</a>
-			</div>
-
-			<div class="photoframe3">
-			<img src="/images/speechbubble.png" class="speech"/>
-			<p class="commentname">{{caption.from.username}}</p>
-			<p class="firstcomment">{{caption.text}}</p>
-			</div>
-			
-		</div>		
+		</a>
 	{{/each}}
 	</script>
 
 	<script id="mostRecent-tpl" type="text/x-handlebars-template">
-		<div class="photoframe">
-
-			<div class="photoframe2 mostrecent">
-			<img src="{{data.1.caption.from.profile_picture}}" class="profilepic" />
-			<h1 class="username">{{data.1.caption.from.username}}</h1>
-			</div>
-
-			<div class="photoframe1"> 
-			<a href="{{data.1.images.standard_resolution.url}}" title="{{data.1.caption.text}}" class="Hvh" target="_blank">
+		<a href="{{data.1.link}}" title="{{data.1.caption.text}}" target="_blank" class="Hvh">
 			<img src="{{data.1.images.standard_resolution.url}}" alt="{{data.1.caption.text}}" />
-			</a>
-			</div>
-
-			<div class="photoframe3">
-			<img src="/images/speechbubble.png" class="speech"/>
-			<p class="commentname">{{data.1.caption.from.username}}</p>
-			<p class="firstcomment">{{data.1.caption.text}}</p>
-			</div>
-			
-		</div>	
-
+		</a>
 	</script>
 
 	<!-- CALL MAIN APP SCRIPT -->

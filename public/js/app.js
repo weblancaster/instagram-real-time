@@ -50,7 +50,7 @@
                     dataType: 'jsonp'
                 }).done(function (data) {
                     self.renderTemplate(data);
-                    console.log(data.data[0].user.username);
+                    //console.log(data.data[0].user.username);
                 });
             });
         },
