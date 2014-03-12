@@ -50,8 +50,7 @@
                     dataType: 'jsonp'
                 }).done(function (data) {
                     self.renderTemplate(data);
-                    //console.log(data.data[0].user.username);
-                });
+                }); 
             });
         },
 
@@ -59,7 +58,7 @@
          * [Render the images on the page and check for layout resize]
          */
         renderTemplate: function(data) {
-            var nooflikes, noofphoto, lastAnimate, lastSrc, nextSrc, last,
+            var lastAnimate, lastSrc, nextSrc, last,
                 current = data.data[0].images.standard_resolution.url,
                 w = $(document).width();
 
@@ -72,38 +71,35 @@
 
                 imgWrap.prepend(result);
 
-                //noofphoto = $('#imgContent .photoframe').size();
-                //console.log(noofphoto);
+                noofphoto = $('#imgContent a').size();
+                console.log(noofphoto);
 
-                //nooflikes = data.data[2].likes.count;
-                //console.log(nooflikes);
-
-                last = $('#imgContent .photoframe:first-child');
-                lastSrc = $('#imgContent .photoframe:first-child').find('.photoframe1 img').attr('src');
-                nextSrc = $('#imgContent .photoframe:nth-child(2)').find('.photoframe1 img').attr('src'); //start at 1.
+                last = $('#imgContent a:first-child');
+                lastSrc = $('#imgContent a:first-child').find('img').attr('src');
+                nextSrc = $('#imgContent a:nth-child(2)').find('img').attr('src');
 
                 if( lastSrc === nextSrc ) {
-                    last.remove(); //remove the first one
+                    last.remove();
                 }
 
-                last = $('#imgContent').find('.photoframe:first-child').removeClass('Hvh');
+                last = $('#imgContent').find(':first-child').removeClass('Hvh');
 
                 if( w >= 900 ) {
-                    lastAnimate = $('#imgContent').find('.photoframe:nth-child(2)').addClass('animated fadeInLeft');
+                    lastAnimate = $('#imgContent').find(':nth-child(2)').addClass('animated fadeInLeft');
                 }
 
                 if( w <= 900 ) {
-                    lastAnimate = $('#imgContent').find('.photoframe:nth-child(1)').addClass('animated fadeInDown');
+                    lastAnimate = $('#imgContent').find(':nth-child(1)').addClass('animated fadeInDown');
                 }
 
                 $(window).resize(function() {
                     var w = $(document).width();
                     if( w >= 900 ) {
-                        lastAnimate = $('#imgContent').find('.photoframe:nth-child(2)').addClass('animated fadeInLeft');
+                        lastAnimate = $('#imgContent').find(':nth-child(2)').addClass('animated fadeInLeft');
                     }
 
                     if( w <= 900 ) {
-                        lastAnimate = $('#imgContent').find('.photoframe:nth-child(1)').addClass('animated fadeInDown');
+                        lastAnimate = $('#imgContent').find(':nth-child(1)').addClass('animated fadeInDown');
                     }
                 });
         },
@@ -113,13 +109,9 @@
          */
         mostRecent: function() {
             socket.on('firstShow', function (data) {
-                var clean = $('imgContent').find('.photoframe').remove();
-                //var countoflikes = data.data[2].likes.count;
-                //console.log(countoflikes);
-
+                var clean = $('imgContent').find('a').remove();
                 var
                     query = data,
-                    /*compile handlebar template*/
                     source = $('#firstShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate(query),
