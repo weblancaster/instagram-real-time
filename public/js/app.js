@@ -1,4 +1,5 @@
 (function() {
+    
     var socket = io.connect('/');
 
     /**
@@ -67,39 +68,39 @@
                     source = $('#mostRecent-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate(query),
-                    imgWrap = $('#imgContent');
+                    imgWrap = $('#grid');
 
                 imgWrap.prepend(result);
 
-                noofphoto = $('#imgContent a').size();
+                noofphoto = $('#grid a').size();
                 console.log(noofphoto);
 
-                last = $('#imgContent a:first-child');
-                lastSrc = $('#imgContent a:first-child').find('img').attr('src');
-                nextSrc = $('#imgContent a:nth-child(2)').find('img').attr('src');
+                last = $('#grid a:first-child');
+                lastSrc = $('#grid a:first-child').find('img').attr('src');
+                nextSrc = $('#grid a:nth-child(2)').find('img').attr('src');
 
                 if( lastSrc === nextSrc ) {
                     last.remove();
                 }
 
-                last = $('#imgContent').find(':first-child').removeClass('Hvh');
+                last = $('#grid').find(':first-child').removeClass('Hvh');
 
                 if( w >= 900 ) {
-                    lastAnimate = $('#imgContent').find(':nth-child(2)').addClass('animated fadeInLeft');
+                    lastAnimate = $('#grid').find(':nth-child(2)').addClass('animated fadeInLeft');
                 }
 
                 if( w <= 900 ) {
-                    lastAnimate = $('#imgContent').find(':nth-child(1)').addClass('animated fadeInDown');
+                    lastAnimate = $('#grid').find(':nth-child(1)').addClass('animated fadeInDown');
                 }
 
                 $(window).resize(function() {
                     var w = $(document).width();
                     if( w >= 900 ) {
-                        lastAnimate = $('#imgContent').find(':nth-child(2)').addClass('animated fadeInLeft');
+                        lastAnimate = $('#grid').find(':nth-child(2)').addClass('animated fadeInLeft');
                     }
 
                     if( w <= 900 ) {
-                        lastAnimate = $('#imgContent').find(':nth-child(1)').addClass('animated fadeInDown');
+                        lastAnimate = $('#grid').find(':nth-child(1)').addClass('animated fadeInDown');
                     }
                 });
         },
@@ -109,13 +110,13 @@
          */
         mostRecent: function() {
             socket.on('firstShow', function (data) {
-                var clean = $('imgContent').find('a').remove();
+                var clean = $('grid').find('a').remove();
                 var
                     query = data,
                     source = $('#firstShow-tpl').html(),
                     compiledTemplate = Handlebars.compile(source),
                     result = compiledTemplate(query),
-                    imgWrap = $('#imgContent');
+                    imgWrap = $('#grid');
 
                 imgWrap.html(result);
             });

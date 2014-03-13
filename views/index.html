@@ -51,27 +51,32 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 	<!--********************************
 	IMAGE WRAPPER - content
 	*********************************-->
-	<div id="imgContent" class="Hcf"></div>
+	<div id="grid" class="Hcf" data-columns></div>
 
 	<!--********************************
 	TEMPLATES
 	*********************************-->
 	<script id="firstShow-tpl" type="text/x-handlebars-template">
 	{{#each firstShow}}
-		<a href="{{images.standard_resolution.url}}" title="{{caption.text}}" target="_blank">
-			<img src="{{images.standard_resolution.url}}" alt="{{caption.text}}" />
-		</a>
+		<div class="column size-1of4">
+			<a href="{{images.standard_resolution.url}}" title="{{caption.text}}" target="_blank">
+				<img src="{{images.standard_resolution.url}}" alt="{{caption.text}}" />
+			</a>
+		</div>
 	{{/each}}
 	</script>
 
 	<script id="mostRecent-tpl" type="text/x-handlebars-template">
-		<a href="{{data.1.images.standard_resolution.url}}" title="{{data.1.caption.text}}" target="_blank" class="Hvh">
-			<img src="{{data.1.images.standard_resolution.url}}" alt="{{data.1.caption.text}}" />
-		</a>
+		<div class="column size-1of4">
+			<a href="{{data.1.images.standard_resolution.url}}" title="{{data.1.caption.text}}" target="_blank" class="Hvh">
+				<img src="{{data.1.images.standard_resolution.url}}" alt="{{data.1.caption.text}}" />
+			</a>
+		</div>
 	</script>
 
 	<!-- CALL MAIN APP SCRIPT -->
 	<script src="/js/app.js"></script>
+	<!--<script src="/js/salvattore.min.js"></script>-->
 
 	<!--[if lt IE 9]>
     </div>
