@@ -8,7 +8,15 @@
     "express": "latest",
     "jade": "latest",
     "request": "latest",
-    "instagram-node-lib": "~0.1.1"
+    "instagram-node-lib": "~0.1.1",
+    "dropbox-node": "0.4.0",
+    "passport-dropbox": "0.1.2",
+    "dropbox": "0.10.2",
+    "dbox":"0.6.3",
+    "mandrill-api": "*",
+    "mailchimp-api": "*",
+    "pg": "*",
+    "mysql": "2.1.1"
   },
   "engines": {
     "node": "0.10.12",

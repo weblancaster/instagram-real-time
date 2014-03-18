@@ -6,6 +6,24 @@ var Instagram = require('instagram-node-lib');
 var http = require('http');
 var request = ('request');
 var intervalID;
+var Dropbox         = require('dropbox');
+var uploader = require('./routes/upload');
+var mail = require("./routes/mail");
+var emailModel = require("./model/email");
+
+/*var dbox  = require("dbox");
+var app   = dbox.app({ "app_key": consumer_key, "app_secret": consumer_secret });
+var reqToken ;*/
+/*app.requesttoken(function(status, request_token){
+	console.log(request_token);
+});*/
+/*app.accesstoken({ oauth_token_secret: '953fwx164mYL7OM7',
+	  oauth_token: 'D0SeL2sAmLJmCnHV',
+	  authorize_url: 'https://www.dropbox.com/1/oauth/authorize?oauth_token=D0SeL2sAmLJmCnHV' }, function(status, access_token){
+	  console.log(access_token);
+	})*/
+
+
 
 /**
  * Set the paths for your files
@@ -82,6 +100,7 @@ io.configure(function () {
   io.set("polling duration", 10); 
 });
 
+
 /**
  * Set your app main configuration
  */
@@ -98,6 +117,11 @@ app.configure(function(){
  * Render your index/view "my choice was not use jade"
  */
 app.get("/views", function(req, res){
+	var dropbox = new DropboxClient(consumer_key, consumer_secret);
+    dropbox.getAccessToken("truong.ho.hdwebsoft@gmail.com", "123456", function(err, token, secret){
+    	console.log(token);
+    	console.log(secret);
+    });
     res.render("index");
 });
 
@@ -118,7 +142,6 @@ io.sockets.on('connection', function (socket) {
       }
   });
 });
-
 /**
  * Needed to receive the handshake
  */
@@ -140,6 +163,34 @@ app.post('/callback', function(req, res) {
 
     });
     res.end();
+});
+
+/**
+ * 
+ */
+app.post('/upload', function(req, res){
+     var img = req.body.img;
+     uploader.upload(img, req, res);
+});
+/**
+ * 
+ */
+app.post('/sendmail', function(req, res){
+     var email = req.body.mail;
+     var filename = req.body.filename;
+     mail.sendMail(email, filename);
+     mail.subscribe(email);
+     mail.insert(email);
+	 res.end();
+});
+app.get('/remove/:filename', function(req, res){
+	uploader.removeTempFile(req.params.filename);
+	res.end();
+});
+
+app.get("/cleanup", function(req, res){
+	uploader.removeTempFile();
+	res.end();
 });
 
 /**

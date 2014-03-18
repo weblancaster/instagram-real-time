@@ -16,8 +16,24 @@
             this.getData();
             this.aboutInfo();
             this.mobileNav();
+            this.attachImageClicked();
         },
-
+        /**
+         * []
+         */
+        attachImageClicked: function(e){
+        	var self = this,
+        	context = {
+        			title : "Print Photo",
+        	};
+        	$(imgContent).on('click', 'img', function(e){
+        		e.preventDefault();
+        		context.url = $(this).attr("src");
+        		new Dialog(context, socket);
+        		return false;
+        	})
+        },
+        
         /**
          * [Interaction to open mobile navigation]
          */
@@ -35,7 +51,7 @@
             });
 
         },
-
+        
         /**
          * [get data ajax and send to render method]
          */
@@ -72,7 +88,7 @@
                 imgWrap.prepend(result);
 
                 noofphoto = $('#imgContent a').size();
-                console.log(noofphoto);
+                //console.log(noofphoto);
 
                 last = $('#imgContent a:first-child');
                 lastSrc = $('#imgContent a:first-child').find('img').attr('src');
