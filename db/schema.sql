@@ -18,10 +18,10 @@ USE `instagram`;
 -- Dumping structure for table instagram.emails
 CREATE TABLE IF NOT EXISTS `emails` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `createdDate` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
+  `createdDate` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dumping data for table instagram.emails: ~0 rows (approximately)
 /*!40000 ALTER TABLE `emails` DISABLE KEYS */;
