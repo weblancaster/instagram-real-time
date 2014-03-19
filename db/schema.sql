@@ -11,14 +11,14 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for instagram
-CREATE DATABASE IF NOT EXISTS `instagram` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE IF NOT EXISTS `instagram` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
 USE `instagram`;
 
 
 -- Dumping structure for table instagram.emails
 CREATE TABLE IF NOT EXISTS `emails` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `createdDate` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `createdDate` datetime NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
