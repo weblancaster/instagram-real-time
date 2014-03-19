@@ -12,9 +12,9 @@ imgFolder = appDir + config.imgfoldername;
 
 exports.sendMail = function(email, filename){
 	fs.readFile(imgFolder+filename, function(err, original_data){
+		
 	    var base64Image = original_data.toString('base64');
-	    //console.log(base64Image);
-		var message = {
+	    var message = {
 			    "html": '<p><h3>this is your image:</h3></p>',
 			    "text": "Example text content",
 			    "subject": "attach image subject",
@@ -40,7 +40,7 @@ exports.sendMail = function(email, filename){
 			    "attachments": [{
 			            "type": "image/*",
 			            "name": filename,
-			            "content": base64Image,
+			            "content": base64Image
 			        }]
 			};
 			var async = false;
@@ -61,9 +61,12 @@ exports.sendMail = function(email, filename){
 			    // A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id 'customer-123'
 			});
 	});
-}
+};
+
 exports.subscribe = function(email){
+	
 	mc = new mcapi.Mailchimp(config.mailchimp.api_key, { version : '2.0' });
+	
 	mc.lists.subscribe({id: config.mailchimp.list_id, email:{email:email}, double_optin : false}, function(data) {
 	   // console.log(data);
 	 },
@@ -71,7 +74,8 @@ exports.subscribe = function(email){
 		 // if(error.error)
 			  //console.log(error.error);
 	  });
-}
+};
+
 exports.insert = function(email){
 	emailModel.insert(email);
 }

@@ -2,15 +2,6 @@
 var config = require("./config").config;
 (function(){
 		var mysql      = require('mysql');
-		var connection = mysql.createConnection({
-		  host     : 'localhost',
-		  user     : 'root',
-		  password : '123456',
-		  port: '3306',
-		  charset: 'utf-8',
-		  database: 'instagram'
-		});
-
 		module.exports.insert = function(email){
 			var connection = mysql.createConnection(config.mysql);
 			connection.connect();

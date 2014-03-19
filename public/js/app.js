@@ -24,7 +24,7 @@
         attachImageClicked: function(e){
         	var self = this,
         	context = {
-        			title : "Print Photo",
+        			title : "Print Photo"
         	};
         	$(imgContent).on('click', 'img', function(e){
         		e.preventDefault();

@@ -4,6 +4,7 @@ config = {
 			consumer_secret : '46w1uvamgsqlyxk',
 			oauth_token_secret : 'fedqkvr939l6fkr',
 			oauth_token : '0aiu329widy1qnbk',
+			image_folder: "print/"
 		},
 		mandrill:{
 			api_key : "zRsQ9cIpBL-ouzrJZSH7CA",
@@ -21,5 +22,5 @@ config = {
 			  database: 'instagram'
 		},
 		imgfoldername: "/imageupload/"
-}
+};
 exports.config = config;
