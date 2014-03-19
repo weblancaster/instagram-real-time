@@ -10,24 +10,29 @@ var Dropbox         = require('dropbox');
 var uploader = require('./routes/upload');
 var mail = require("./routes/mail");
 var emailModel = require("./model/email");
-//
-//var config = require('./model/config').config;
-//
-//var dbox  = require("dbox");
-//var app   = dbox.app({ "app_key": config.dropbox.consumer_key, "app_secret": config.dropbox.consumer_secret });
-//var reqToken ;
-//app.requesttoken(function(status, request_token){
-//	console.log(request_token);
-//});
-//return;
-//
-//app.accesstoken({ 
-//	  oauth_token_secret: 'eCR4JyK5YErZmFic',
-//	  oauth_token: 'FcCHC3xhb3lLWT9V',
-//	  authorize_url: 'https://www.dropbox.com/1/oauth/authorize?oauth_token=FcCHC3xhb3lLWT9V' }, function(status, access_token){
-//	  console.log(access_token);
-//});
-//return;
+
+/** 
+ * this code is being used to integrate Dropbox account with Dropbox app 
+ */
+/*
+var config = require('./model/config').config;
+
+var dbox  = require("dbox");
+var app   = dbox.app({ "app_key": config.dropbox.consumer_key, "app_secret": config.dropbox.consumer_secret });
+var reqToken ;
+app.requesttoken(function(status, request_token){
+	console.log(request_token);
+});
+return;
+
+app.accesstoken({ 
+	  oauth_token_secret: 'eCR4JyK5YErZmFic',
+	  oauth_token: 'FcCHC3xhb3lLWT9V',
+	  authorize_url: 'https://www.dropbox.com/1/oauth/authorize?oauth_token=FcCHC3xhb3lLWT9V' }, function(status, access_token){
+	  console.log(access_token);
+});
+return;
+*/
 
 
 
