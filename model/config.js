@@ -1,9 +1,9 @@
 config = {
 		dropbox: {
-			consumer_key : '2h910c3khhxn3h9',
-			consumer_secret : '46w1uvamgsqlyxk',
-			oauth_token_secret : 'fedqkvr939l6fkr',
-			oauth_token : '0aiu329widy1qnbk',
+			consumer_key : 'ner5ats5affj4m8',
+			consumer_secret : 'iq4tsrrzlrtl4kh',
+			oauth_token_secret: '7tll7oh8y0idqn8',
+			oauth_token: '0i04jkdspwt6ukla',
 			image_folder: "print/"
 		},
 		mandrill:{

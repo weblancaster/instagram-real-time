@@ -32,26 +32,26 @@ Dialog.prototype.nextStep = function () {
 	var self = this;
 	switch(this._step) {
 	
-	case 1:
-		$('.yes-btn').prop('disabled', true).text('Loading...');
-		this.uploadFile();
-		break;
-		
-	case 4:
-		var mail = $("#email").val();
-		if(!this._isValidEmail(mail)) {
-			$("#email").focus().parent().addClass("has-error");
-			this._step--;
+		case 1:
+			$('.yes-btn').prop('disabled', true).text('Loading...');
+			this.uploadFile();
+			break;
+			
+		case 4:
+			var mail = $("#email").val();
+			if(!this._isValidEmail(mail)) {
+				$("#email").focus().parent().addClass("has-error");
+				this._step--;
+				return;
+			
+			}else {
+				this.sendMail(mail);
+			}
+			break;
+			
+		case 5:
+			this._modal.modal('hide');
 			return;
-		
-		}else {
-			this.sendMail(mail);
-		}
-		break;
-		
-	case 5:
-		this._modal.modal('hide');
-		return;
 	};
 	
 	this._carousel.carousel('next');

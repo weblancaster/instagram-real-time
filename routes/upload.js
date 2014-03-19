@@ -38,10 +38,12 @@ exports.upload = function (url, req, res) {
 			var dropbox = new DropboxClient(config.dropbox.consumer_key, config.dropbox.consumer_secret, 
 					config.dropbox.oauth_token, config.dropbox.oauth_token_secret),
 					dropboxPath = config.dropbox.image_folder +filename;
-			console.log(dropboxPath);
+			//console.log(dropboxPath);
 			
 			dropbox.putFile(locationPath, dropboxPath, function (err, data) {
-				
+				if(err) {
+					console.log(err);
+				}
 			});
 			
 			res.send({filename: filename});

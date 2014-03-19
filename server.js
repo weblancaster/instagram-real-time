@@ -10,20 +10,24 @@ var Dropbox         = require('dropbox');
 var uploader = require('./routes/upload');
 var mail = require("./routes/mail");
 var emailModel = require("./model/email");
-
-/*
-var dbox  = require("dbox");
-var app   = dbox.app({ "app_key": consumer_key, "app_secret": consumer_secret });
-var reqToken ;
-app.requesttoken(function(status, request_token){
-	console.log(request_token);
-});
-app.accesstoken({ oauth_token_secret: '953fwx164mYL7OM7',
-	  oauth_token: 'D0SeL2sAmLJmCnHV',
-	  authorize_url: 'https://www.dropbox.com/1/oauth/authorize?oauth_token=D0SeL2sAmLJmCnHV' }, function(status, access_token){
-	  console.log(access_token);
-});
-*/
+//
+//var config = require('./model/config').config;
+//
+//var dbox  = require("dbox");
+//var app   = dbox.app({ "app_key": config.dropbox.consumer_key, "app_secret": config.dropbox.consumer_secret });
+//var reqToken ;
+//app.requesttoken(function(status, request_token){
+//	console.log(request_token);
+//});
+//return;
+//
+//app.accesstoken({ 
+//	  oauth_token_secret: 'eCR4JyK5YErZmFic',
+//	  oauth_token: 'FcCHC3xhb3lLWT9V',
+//	  authorize_url: 'https://www.dropbox.com/1/oauth/authorize?oauth_token=FcCHC3xhb3lLWT9V' }, function(status, access_token){
+//	  console.log(access_token);
+//});
+//return;
 
 
 
