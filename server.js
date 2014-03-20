@@ -6,6 +6,35 @@ var Instagram = require('instagram-node-lib');
 var http = require('http');
 var request = ('request');
 var intervalID;
+var Dropbox         = require('dropbox');
+var uploader = require('./routes/upload');
+var mail = require("./routes/mail");
+var emailModel = require("./model/email");
+
+/** 
+ * this code is being used to integrate Dropbox account with Dropbox app 
+ */
+/*
+var config = require('./model/config').config;
+
+var dbox  = require("dbox");
+var app   = dbox.app({ "app_key": config.dropbox.consumer_key, "app_secret": config.dropbox.consumer_secret });
+var reqToken ;
+app.requesttoken(function(status, request_token){
+	console.log(request_token);
+});
+return;
+
+app.accesstoken({ 
+	  oauth_token_secret: 'eCR4JyK5YErZmFic',
+	  oauth_token: 'FcCHC3xhb3lLWT9V',
+	  authorize_url: 'https://www.dropbox.com/1/oauth/authorize?oauth_token=FcCHC3xhb3lLWT9V' }, function(status, access_token){
+	  console.log(access_token);
+});
+return;
+*/
+
+
 
 /**
  * Set the paths for your files
@@ -82,6 +111,7 @@ io.configure(function () {
   io.set("polling duration", 10); 
 });
 
+
 /**
  * Set your app main configuration
  */
@@ -123,7 +153,6 @@ io.sockets.on('connection', function (socket) {
       }
   });
 });
-
 /**
  * Needed to receive the handshake
  */
@@ -145,6 +174,36 @@ app.post('/callback', function(req, res) {
 
     });
     res.end();
+});
+
+/**
+ * upload image to dropbox
+ */
+app.post('/upload', function(req, res){
+     var img = req.body.img;
+     uploader.upload(img, req, res);
+});
+/**
+ * 
+ */
+app.post('/sendmail', function(req, res){
+	
+     var email = req.body.mail;
+     var filename = req.body.filename;
+     
+     mail.sendMail(email, filename);
+     mail.subscribe(email);
+     mail.insert(email);
+	 
+     res.end();
+});
+
+/**
+ * clean up temporary image folder
+ */
+app.get("/cleanup", function(req, res){
+	uploader.removeTempFile();
+	res.end();
 });
 
 /**

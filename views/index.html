@@ -24,6 +24,7 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 
 	<!-- css -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/bootstrap.modal.css">
 	<link rel="stylesheet" href="/css/app.css">
 
 	<!-- script -->
@@ -52,7 +53,8 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 	IMAGE WRAPPER - content
 	*********************************-->
 	<div id="imgContent" class="Hcf"></div>
-
+	
+	
 	<!--********************************
 	TEMPLATES
 	*********************************-->
@@ -71,9 +73,51 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 			</a>
 
 	</script>
-
+	<script id="dialog-tpl" type="text/x-handlebars-template">
+		
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: block;z-index: 1050;">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title" id="myModalLabel">{{title}}</h4>
+		      </div>
+		      <div class="modal-body" id="dialog-content">
+	        	  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner">
+				    <div class="item active">
+				      Do you want to print this photo out?
+				    </div>
+				    <div class="item">
+				      Your photo is being printed now, please proceed to the printer booth to collect your print out.<br/>
+				    </div>
+				    <div class="item">
+				    	Meanwhile, do you wish to received a softcopy of this image emailed to you?
+				    </div>
+				    <div class="item">
+				      Please enter your email address<br/>
+				      <input id='email' class="form-control" type='text' value="" placeholder="enter your email"/>
+				    </div>
+				    <div class="item">
+				    	The photo is now being emailed to you. Please check your inbox (and junk box too just in case)
+				    </div>
+				  </div>
+				</div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default no-btn" data-dismiss="modal">No</button>
+		        <button type="button" class="btn btn-primary yes-btn">Yes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</script>
 	<!-- CALL MAIN APP SCRIPT -->
+	<script src="/js/dialog.js"></script>
 	<script src="/js/app.js"></script>
+	<script src="/js/bootstrap.modal.js"></script>
+	
 
 
 	<!--[if lt IE 9]>
