@@ -184,6 +184,7 @@ app.post('/upload', function(req, res){
 	 var rootPath = __dirname;
 
      uploader.upload(rootPath, img, req, res);
+	 uploader.upload(img, req, res);
 });
 /**
  * 

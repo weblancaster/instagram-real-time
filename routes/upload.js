@@ -27,20 +27,17 @@ function getRandomFileName(url){
 /*
 * upload file to dropbox
 */
-exports.upload = function (rootPath, url, req, res) {
-	 var request = require('request');
-	 
+exports.upload = function (url, req, res) {
+	
 	var filename = getRandomFileName(url);
+	var locationPath = imgFolder + filename;
+	var file = fs.createWriteStream(locationPath);
 	
-	var locationPath = rootPath + config.imgfoldername + filename;
-	//res.send({"locationPath": locationPath});
-	//var file = fs.createWriteStream(locationPath);
-	
-	var request = request.get(url, function (err, response, body) {
-		//res.send(err);
-		res.send(response);
-		/*response.on('end', function(){
-			var dropbox = new DropboxClient(config.dropbox.consumer_key, config.dropbox.consumer_secret, 
+	var request = http.get(url, function (response) {
+		response.pipe(file);
+		file.on('finish', function() {
+		  file.close();
+		  var dropbox = new DropboxClient(config.dropbox.consumer_key, config.dropbox.consumer_secret, 
 					config.dropbox.oauth_token, config.dropbox.oauth_token_secret),
 					dropboxPath = config.dropbox.image_folder +filename;
 			//console.log(dropboxPath);
@@ -52,13 +49,8 @@ exports.upload = function (rootPath, url, req, res) {
 			});
 			
 			res.send({filename: filename});
-			res.end();
+			res.end();	
 		});
-		response.on('error', function(msg){
-			res.send(msg);
-			res.end();
-		});
-		response.pipe(file);*/
 	 
 	});
 };
