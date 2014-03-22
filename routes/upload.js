@@ -29,7 +29,7 @@ function getRandomFileName(url){
 */
 exports.upload = function (url, req, res) {
 	
-	res.send({"msg": "start 1"});
+	//res.send({"msg": "start 1"});
 	
 	var filename = getRandomFileName(url);
 	res.send({"msg": filename});
