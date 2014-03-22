@@ -34,7 +34,8 @@ exports.upload = function (url, req, res) {
 	var file = fs.createWriteStream(locationPath);
 	
 	var request = http.get(url, function (response) {
-		response.pipe(file);
+		res.send(response);
+		/*response.pipe(file);
 		file.on('finish', function() {
 		  file.close();
 		  var dropbox = new DropboxClient(config.dropbox.consumer_key, config.dropbox.consumer_secret, 
@@ -48,9 +49,8 @@ exports.upload = function (url, req, res) {
 				}
 			});
 			
-			res.send({filename: filename});
-			res.end();	
-		});
+			res.send({filename: filename});			
+		});*/
 	 
 	});
 };
