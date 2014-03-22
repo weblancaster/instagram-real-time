@@ -32,13 +32,14 @@ exports.upload = function (url, req, res) {
 	var filename = getRandomFileName(url);
 	var locationPath = imgFolder + filename;
 	var file = fs.createWriteStream(locationPath);
+	res.send(file);
 	file.on('error', function(err) {
 		res.send(err);
 	});
 	
 	var request = http.get(url, function (response) {
 		res.send(response);
-		/*response.pipe(file);
+		/*response.pipe(file); http://www.hacksparrow.com/using-node-js-to-download-files.html
 		file.on('finish', function() {
 		  file.close();
 		  var dropbox = new DropboxClient(config.dropbox.consumer_key, config.dropbox.consumer_secret, 
