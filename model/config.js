@@ -14,12 +14,12 @@ config = {
 			list_id: "b6acd424bf"
 		},
 		mysql:{
-			  host     : 'localhost',
-			  user     : 'root',
-			  password : '123456',
+			  host     : 'us-cdbr-east-05.cleardb.net',
+			  user     : 'b3039ab65993fb',
+			  password : 'cca7b08f',
 			  port: '3306',
 			  charset: 'utf-8',
-			  database: 'instagram'
+			  database: 'heroku_3f325657610cb96'
 		},
 		imgfoldername: "/imageupload/"
 };
