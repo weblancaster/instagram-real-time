@@ -49,7 +49,9 @@ exports.upload = function (url, req, res) {
 			res.send({filename: filename});
 			res.end();
 		});
-		
+		response.on('error', function(msg){
+			console.log(msg);
+		});
 		response.pipe(file);
 	 
 	});
