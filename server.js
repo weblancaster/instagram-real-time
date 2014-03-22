@@ -181,7 +181,7 @@ app.post('/callback', function(req, res) {
  */
 app.post('/upload', function(req, res){
      var img = req.body.img;
-     uploader.upload(img, req, res);
+     //uploader.upload(img, req, res);
 });
 /**
  * 
