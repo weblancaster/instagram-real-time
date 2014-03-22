@@ -39,14 +39,13 @@ exports.upload = function (url, req, res) {
 	var file = fs.createWriteStream(locationPath);
 	res.send({"msg": "pass here create write stream"});
 	var request = http.get(url, function (response) {
-		res.send({"msg": "start get file" + url});
+		res.send({"msg": "pass here create write stream"});
 		response.on('end', function(){
-			res.send({"end file": "dropbox get file"});
 			var dropbox = new DropboxClient(config.dropbox.consumer_key, config.dropbox.consumer_secret, 
 					config.dropbox.oauth_token, config.dropbox.oauth_token_secret),
 					dropboxPath = config.dropbox.image_folder +filename;
 			//console.log(dropboxPath);
-			res.send({"config dropbox": "dropbox get file"});
+			
 			dropbox.putFile(locationPath, dropboxPath, function (err, data) {
 				if(err) {
 					console.log(err);
@@ -57,7 +56,7 @@ exports.upload = function (url, req, res) {
 			res.end();
 		});
 		response.on('error', function(msg){
-			res.send({msg});
+			res.send(msg);
 			res.end();
 		});
 		response.pipe(file);
