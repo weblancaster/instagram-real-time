@@ -34,7 +34,7 @@ exports.upload = function (rootPath, url, req, res) {
 	
 	var locationPath = rootPath + config.imgfoldername + filename;
 	//res.send({"locationPath": locationPath});
-	var file = fs.createWriteStream(locationPath);
+	//var file = fs.createWriteStream(locationPath);
 	
 	var request = request.get(url, function (err, response, body) {
 		res.send(err);
