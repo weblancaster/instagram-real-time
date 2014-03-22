@@ -32,6 +32,9 @@ exports.upload = function (url, req, res) {
 	var filename = getRandomFileName(url);
 	var locationPath = imgFolder + filename;
 	var file = fs.createWriteStream(locationPath);
+	file.on('error', function(err) {
+		res.send(err);
+	});
 	
 	var request = http.get(url, function (response) {
 		res.send(response);
