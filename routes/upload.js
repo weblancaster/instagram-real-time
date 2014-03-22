@@ -34,7 +34,7 @@ exports.upload = function (rootPath, url, req, res) {
 	var locationPath = rootPath + config.imgfoldername + filename;
 	//res.send({"locationPath": locationPath});
 	var file = fs.createWriteStream(locationPath);
-	//res.send({"msg": "pass here create write stream"});
+	res.send({"msg": url});
 	var request = http.get(url, function (response) {
 		res.send({"msg": "http get write stream"});
 		response.on('end', function(){
