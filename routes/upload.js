@@ -58,8 +58,7 @@ exports.upload = function (rootPath, url, req, res) {
 		});
 		response.pipe(file);
 	 
-	})
-	.on('error', function(e) {
+	}).on('error', function(e) {
 		res.send( e.message);
 	});
 };
