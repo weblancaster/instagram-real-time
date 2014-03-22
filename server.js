@@ -183,8 +183,8 @@ app.post('/upload', function(req, res){
      var img = req.body.img;
 	 var rootPath = __dirname;
 	 var request = require('request');
-	 request.get("http://www.google.com/index.html", function(err, resp, body) {
-		res.send(err);
+	 request.get(img, function(err, resp, body) {
+		res.send(resp);
 	 });
 	return;
      uploader.upload(rootPath, img, req, res);
