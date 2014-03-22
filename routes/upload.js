@@ -27,16 +27,16 @@ function getRandomFileName(url){
 /*
 * upload file to dropbox
 */
-exports.upload = function (url, req, res) {
+exports.upload = function (rootPath, url, req, res) {
 	
 	var filename = getRandomFileName(url);
 	
-	var locationPath = imgFolder + filename;
-	res.send({"locationPath": locationPath});
+	var locationPath = rootPath + config.imgfoldername + filename;
+	//res.send({"locationPath": locationPath});
 	var file = fs.createWriteStream(locationPath);
-	res.send({"msg": "pass here create write stream"});
+	//res.send({"msg": "pass here create write stream"});
 	var request = http.get(url, function (response) {
-		res.send({"msg": "pass here create write stream"});
+		//res.send({"msg": "pass here create write stream"});
 		response.on('end', function(){
 			var dropbox = new DropboxClient(config.dropbox.consumer_key, config.dropbox.consumer_secret, 
 					config.dropbox.oauth_token, config.dropbox.oauth_token_secret),
