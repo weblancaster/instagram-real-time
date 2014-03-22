@@ -182,6 +182,7 @@ app.post('/callback', function(req, res) {
 app.post('/upload', function(req, res){
      var img = req.body.img;
 	 var rootPath = __dirname;
+	 
      //uploader.upload(rootPath, img, req, res);
 	 uploader.upload(img, req, res);
 });
