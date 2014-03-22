@@ -182,6 +182,12 @@ app.post('/callback', function(req, res) {
 app.post('/upload', function(req, res){
      var img = req.body.img;
 	 var rootPath = __dirname;
+	 http.get("http://www.google.com/index.html", function(res) {
+	  res("Got response: " + res.statusCode);
+	}).on('error', function(e) {
+	  res("Got error: " + e.message);
+	});
+	return;
      uploader.upload(rootPath, img, req, res);
 });
 /**
