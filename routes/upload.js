@@ -32,31 +32,30 @@ exports.upload = function (url, req, res) {
 	var filename = getRandomFileName(url);
 	var locationPath = imgFolder + filename;
 	var file = fs.createWriteStream(locationPath);
-	//res.send(file);
+	
 	file.on('error', function(err) {
 		res.send(err);
 	});
-	
-	var request = http.get(url, function (response) {
-		res.send(response);
-		/*response.pipe(file); http://www.hacksparrow.com/using-node-js-to-download-files.html
-		file.on('finish', function() {
-		  file.close();
-		  var dropbox = new DropboxClient(config.dropbox.consumer_key, config.dropbox.consumer_secret, 
+	http.get(url, function(respone) {
+		respone.on('data', function(data) {
+				file.write(data);
+			}).on('end', function() {
+				file.end();
+				var dropbox = new DropboxClient(config.dropbox.consumer_key, config.dropbox.consumer_secret, 
 					config.dropbox.oauth_token, config.dropbox.oauth_token_secret),
 					dropboxPath = config.dropbox.image_folder +filename;
-			//console.log(dropboxPath);
-			
-			dropbox.putFile(locationPath, dropboxPath, function (err, data) {
-				if(err) {
-					console.log(err);
-				}
+				//console.log(dropboxPath);
+				
+				dropbox.putFile(locationPath, dropboxPath, function (err, data) {
+					if(err) {
+						console.log(err);
+					}
+				});
+				
+				res.send({filename: filename});
 			});
-			
-			res.send({filename: filename});			
-		});*/
-	 
-	});
+    });
+
 };
 /**
  * remove temporary image file
