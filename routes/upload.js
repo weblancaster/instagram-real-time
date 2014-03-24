@@ -28,7 +28,14 @@ function getRandomFileName(url){
 * upload file to dropbox
 */
 exports.upload = function (url, req, res) {
-	
+	var fs = require('fs');
+var stream = fs.createWriteStream('/app/imageupload/aa.txt');
+stream.once('open', function(fd) {
+  stream.write("My first row\n");
+  stream.write("My second row\n");
+  stream.end();
+});
+
 	var filename = getRandomFileName(url);
 	var locationPath = imgFolder + filename;
 	var file = fs.createWriteStream('/app/imageupload/aa.jpg');
