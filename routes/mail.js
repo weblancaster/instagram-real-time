@@ -15,7 +15,7 @@ exports.sendMail = function(email, filename){
 		
 	    var base64Image = original_data.toString('base64');
 	    var message = {
-			    "html": '<p><h3>this is your image:</h3></p>',
+			    "html": '<p>This is your image from instagram-real-time app.</p>',
 			    "text": "Example text content",
 			    "subject": "attach image subject",
 			    "from_email": "no-reply@example.com",
