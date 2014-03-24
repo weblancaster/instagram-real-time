@@ -32,27 +32,28 @@ exports.upload = function (url, req, res) {
 	var filename = getRandomFileName(url);
 	var locationPath = imgFolder + filename;
 	var file = fs.createWriteStream(locationPath);
-	
-	var request = http.get(url, function (response) {
-		response.on('end', function(){
-			var dropbox = new DropboxClient(config.dropbox.consumer_key, config.dropbox.consumer_secret, 
+	file.on('error', function(err) {
+		res.send(err);
+	});
+	http.get(url, function(respone) {
+		respone.on('data', function(data) {
+				file.write(data);
+			}).on('end', function() {
+				file.end();
+				var dropbox = new DropboxClient(config.dropbox.consumer_key, config.dropbox.consumer_secret, 
 					config.dropbox.oauth_token, config.dropbox.oauth_token_secret),
 					dropboxPath = config.dropbox.image_folder +filename;
-			//console.log(dropboxPath);
-			
-			dropbox.putFile(locationPath, dropboxPath, function (err, data) {
-				if(err) {
-					console.log(err);
-				}
+				
+				dropbox.putFile(locationPath, dropboxPath, function (err, data) {
+					if(err) {
+						console.log(err);
+					}
+				});
+				
+				res.send({filename: filename});
 			});
-			
-			res.send({filename: filename});
-			res.end();
-		});
-		
-		response.pipe(file);
-	 
-	});
+    });
+
 };
 /**
  * remove temporary image file

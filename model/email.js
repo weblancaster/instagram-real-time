@@ -6,10 +6,11 @@ var config = require("./config").config;
 			var connection = mysql.createConnection(config.mysql);
 			connection.connect();
 			var sql    = "INSERT INTO `emails`(`id`, `createdDate`, `email`) VALUES (NULL, NOW(),"+connection.escape(email)+")";
-			//console.log(sql);
 			connection.query(sql, function(err, rows, fields) {
-			  if (err)
-			  	console.log(err);
+				if (err) {
+					console.log(err);
+				}
+
 			});
 			connection.end();
 		}

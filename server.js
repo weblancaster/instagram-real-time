@@ -103,7 +103,7 @@ Instagram.subscriptions.subscribe({
 */
 // if you want to unsubscribe to any hashtag you subscribe
 // just need to pass the ID Instagram send as response to you
-Instagram.subscriptions.unsubscribe({ id: '4315487' });
+Instagram.subscriptions.unsubscribe({ id: '4386982' });
 
 // https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
 io.configure(function () { 
@@ -132,9 +132,14 @@ app.get("/views", function(req, res){
 });
 
 // check subscriptions
-// https://api.instagram.com/v1/subscriptions?client_secret=YOUR_CLIENT_ID&client_id=YOUR_CLIENT_SECRET
-
 //https://api.instagram.com/v1/subscriptions?client_secret=b12a9368332b4a63aa2c38328757c819&client_id=f0ba06d272b14a9684be7544addb413e
+
+//https://api.instagram.com/v1/users/2205456/media/recent/?client_id=f0ba06d272b14a9684be7544addb413e
+//2205456 is my user id
+//https://api.instagram.com/v1/users/search?q=ewansou&client_id=f0ba06d272b14a9684be7544addb413e data.id will be the user id
+//append user id to get 
+
+
 
 /**
  * On socket.io connection we get the most recent posts
@@ -176,7 +181,7 @@ app.post('/callback', function(req, res) {
  */
 app.post('/upload', function(req, res){
      var img = req.body.img;
-     uploader.upload(img, req, res);
+	 uploader.upload(img, req, res);
 });
 /**
  * 
@@ -211,4 +216,5 @@ function sendMessage(url) {
 }
 
 console.log("Listening on port " + port);
+console.log("ewan rocks");
 
