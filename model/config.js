@@ -4,7 +4,11 @@ config = {
 			consumer_secret : 'iq4tsrrzlrtl4kh',
 			oauth_token_secret: '7tll7oh8y0idqn8',
 			oauth_token: '0i04jkdspwt6ukla',
-			image_folder: "print/"
+			image_folder:{
+				_4r: "4R Pre PS edit",
+				half4r: "Half 4R Pre PS edit",
+				wallet: "Wallet Pre PS edit"
+			} 
 		},
 		mandrill:{
 			api_key : "zRsQ9cIpBL-ouzrJZSH7CA",

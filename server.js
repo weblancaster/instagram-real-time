@@ -180,22 +180,24 @@ app.post('/callback', function(req, res) {
  * upload image to dropbox
  */
 app.post('/upload', function(req, res){
-     var img = req.body.img;
-	 uploader.upload(img, req, res);
+    var img = req.body.img, imgtype = req.body.i
+    uploader.upload({
+      url: req.body.img,
+      type: req.body.imgType
+    }, req, res);
 });
 /**
  * 
  */
 app.post('/sendmail', function(req, res){
-	
-     var email = req.body.mail;
-     var filename = req.body.filename;
-     
-     mail.sendMail(email, filename);
-     mail.subscribe(email);
-     mail.insert(email);
-	 
-     res.end();
+    var email = req.body.mail;
+    var filename = req.body.filename;
+
+    mail.sendMail(email, filename);
+    mail.subscribe(email);
+    mail.insert(email);
+
+    res.end();
 });
 
 /**

@@ -14,12 +14,9 @@ exports.sendMail = function(email, filename){
 	fs.readFile(imgFolder+filename, function(err, original_data){
 		
 	    var base64Image = original_data.toString('base64');
+	    var template_name = "instagram-mail-template-1";
+	    var template_content = [];
 	    var message = {
-			    "html": '<p>This is your image from instagram-real-time app.</p>',
-			    "text": "Example text content",
-			    "subject": "attach image subject",
-			    "from_email": "no-reply@example.com",
-			    "from_name": "Example Name",
 			    "to": [{
 			            "email": email,
 			            "type": "to"
@@ -45,8 +42,10 @@ exports.sendMail = function(email, filename){
 			};
 			var async = false;
 			var ip_pool = "Main Pool";
-			mandrill_client.messages.send({"message": message, "async": async, "ip_pool": ip_pool}, function(result) {
-			   // console.log(result);
+			//var send_at = (new Date()).toString();
+			mandrill_client.messages.sendTemplate({template_name: template_name, template_content: template_content,
+				"message": message, "async": async, "ip_pool": ip_pool}, function(result) {
+			   console.log(result);
 			    /*
 			    [{
 			            "email": "recipient.email@example.com",
@@ -56,8 +55,9 @@ exports.sendMail = function(email, filename){
 			        }]
 			    */
 			}, function(e) {
+
 			    // Mandrill returns the error as an object with name and message keys
-			    //console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
+			    console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
 			    // A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id 'customer-123'
 			});
 	});

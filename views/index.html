@@ -87,33 +87,59 @@ Designed with love and for fun by: Daniel Branca (twitter: @designerdanb)
 				  <!-- Wrapper for slides -->
 				  <div class="carousel-inner">
 				    <div class="item active">
-				      Do you want to print this photo out?
+			      		Do you want to print this photo out?
+			      		<div class="modal-btn-grp">
+					        <button type="button" class="btn btn-default no-btn" data-dismiss="modal">No. Back to gallery</button>
+					        <button type="button" class="btn btn-primary first-yes-btn">Yes</button>
+						</div>
 				    </div>
 				    <div class="item">
-				      Your photo is being printed now, please proceed to the printer booth to collect your print out.<br/>
+				      	Please select the size of your photo printout
+				      	<div class="modal-btn-grp-2">
+				      			<div class="col-btn">
+				      				<div><button type="button" class="btn btn-primary img-type 4r">4R</button></div>
+				      				<img src="http://distilleryimage4.s3.amazonaws.com/60d30f04a85811e3b07312c17fb79e44_8.jpg" />
+				      			</div>
+				      			<div class="col-btn">
+				      				<div><button type="button" class="btn btn-primary img-type half-4r">Half 4R</button></div>
+				      				<img src="http://distilleryimage4.s3.amazonaws.com/60d30f04a85811e3b07312c17fb79e44_8.jpg" />
+			      				</div>
+				      			<div class="col-btn">
+				      				<div><button type="button" class="btn btn-primary img-type wallet">Wallet</button></div>
+				      				<img src="http://distilleryimage4.s3.amazonaws.com/60d30f04a85811e3b07312c17fb79e44_8.jpg" />
+		      					</div>
+						</div>
 				    </div>
 				    <div class="item">
-				    	Meanwhile, do you wish to received a softcopy of this image emailed to you?
-				    </div>
-				    <div class="item">
-				      Please enter your email address<br/>
-				      <input id='email' class="form-control" type='text' value="" placeholder="enter your email"/>
+				      	Your photo is being printed now, please proceed to the printer booth to collect your print out.<br/>
+						<div class="form-inline" role="form">
+							<div class="form-group">
+								<label class="sr-only" for="emailInput">Email address</label>
+								<input type="input" class="form-control" id="emailInput" placeholder="Enter email">
+							</div>
+							<button class="btn btn-default submit-email">Submit</button>
+							<p class="err-msg hide">Please enter a valid email address</p>
+						</div>
+						<div class="modal-btn-grp-3">
+							<span>Otherwise, go back to the gallery </span>
+					        <button type="button" class="btn btn-default no-btn disabled" data-dismiss="modal">No. Back to gallery</button>
+						</div>
 				    </div>
 				    <div class="item">
 				    	The photo is now being emailed to you. Please check your inbox (and junk box too just in case)
+				    	<div class="modal-btn-grp">
+					        <button type="button" class="btn btn-default no-btn" data-dismiss="modal">Back to gallery</button>
+						</div>
 				    </div>
 				  </div>
 				</div>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default no-btn" data-dismiss="modal">No</button>
-		        <button type="button" class="btn btn-primary yes-btn">Yes</button>
 		      </div>
 		    </div>
 		  </div>
 		</div>
 	</script>
 	<!-- CALL MAIN APP SCRIPT -->
+	<script src="/js/behavior.js"></script>
 	<script src="/js/dialog.js"></script>
 	<script src="/js/app.js"></script>
 	<script src="/js/bootstrap.modal.js"></script>

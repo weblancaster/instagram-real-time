@@ -603,12 +603,7 @@ button.close {
   min-height: 90px;
   font-size: 14px;
 }
-.modal-footer {
-  margin-top: 15px;
-  padding: 19px 20px 20px;
-  text-align: right;
-  border-top: 1px solid #e5e5e5;
-}
+
 .modal-footer .btn + .btn {
   margin-left: 5px;
   margin-bottom: 0;
@@ -667,3 +662,35 @@ button.close {
     border-color: #843534;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 6px #CE8483;
 }
+.modal-btn-grp{
+  margin-top: 15px;
+  padding: 19px 0 10px 20px;
+  text-align: right;
+}
+.modal-btn-grp-2{
+  margin-top: 15px;
+  padding: 19px 0 10px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+.modal-btn-grp-2 .col-btn{
+  float: left;
+  width: 30%;
+  margin-left: 3%;
+}
+.col-btn img{
+  margin-top: 10px;
+}
+.form-inline{overflow: hidden; border:1px solid #E5E5E5;padding: 30px 5%; border-radius: 4px; margin: 20px 0 0;}
+.form-inline > *{ float: left;}
+.form-inline .form-group{width: 70%;margin-right: 10%;}
+.modal-btn-grp-3 span{float: left; margin-top: 2px;}
+.modal-btn-grp-3 button{float: right;}
+.modal-btn-grp-3{
+  margin-top: 15px;
+  padding: 19px 0 10px;
+  text-align: center;
+  overflow: hidden;
+}
+.err-msg{color: red;float: left;clear:both;}
+.hide{display:none;}
