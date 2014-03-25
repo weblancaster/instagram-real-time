@@ -102,7 +102,7 @@ Printout.prototype.attachEvent = function () {
 		}else {
 			$(".modal-btn-grp-3 button").removeClass("disabled");
 		}
-		console.log('timer is running');
+		//console.log('timer is running');
 	}, 500);
 }
 
