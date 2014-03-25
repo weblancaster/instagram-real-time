@@ -83,12 +83,13 @@ Printout.prototype.attachEvent = function () {
 	var self = this;
 	$(".submit-email").click (function (e) {
 		e.preventDefault();
-		self.detachEvent();
+		
 		var email = $("#emailInput").val();
 		if (!self._isValidEmail(email)) {
 			$("#emailInput").focus().parent().addClass("has-error");
 			$(".err-msg").removeClass("hide");
 		} else {
+			self.detachEvent();
 			self._dialog.sendMail(email);
 			self._dialog.next (new NullBehavior(self._dialog));
 		}
