@@ -86,14 +86,14 @@ io.configure(function () {
 /**
  * Set your app main configuration
  */
-// app.configure(function(){
+app.configure(function(){
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
     app.use(express.static(pub));
     app.use(express.static(view));
     app.use(express.errorHandler());
-// });
+});
 
 /**
  * Render your index/view "my choice was not use jade"
