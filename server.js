@@ -1,4 +1,5 @@
 var express = require("express");
+var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 3700;
 var io = require('socket.io').listen(app.listen(port));
@@ -26,7 +27,7 @@ var clientID = 'YOUR_CLIENT_ID',
  */
 Instagram.set('client_id', clientID);
 Instagram.set('client_secret', clientSecret);
-Instagram.set('callback_url', 'http://YOUR_URL.COM/callback');
+Instagram.set('callback_url', 'http://YOUR_URL.com/callback');
 Instagram.set('redirect_uri', 'http://YOUR_URL.com');
 Instagram.set('maxSockets', 10);
 
@@ -77,22 +78,22 @@ Instagram.subscriptions.subscribe({
 Instagram.subscriptions.unsubscribe({ id: '3668016' });
 
 // https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
-io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
+io.configure(function () {
+  io.set("transports", ["xhr-polling"]);
+  io.set("polling duration", 10);
 });
 
 /**
  * Set your app main configuration
  */
-app.configure(function(){
+// app.configure(function(){
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
     app.use(express.static(pub));
     app.use(express.static(view));
     app.use(express.errorHandler());
-});
+// });
 
 /**
  * Render your index/view "my choice was not use jade"
@@ -109,7 +110,7 @@ app.get("/views", function(req, res){
  * and send to the client side via socket.emit
  */
 io.sockets.on('connection', function (socket) {
-  Instagram.tags.recent({ 
+  Instagram.tags.recent({
       name: 'lollapalooza',
       complete: function(data) {
         socket.emit('firstShow', { firstShow: data });
@@ -150,4 +151,3 @@ function sendMessage(url) {
 }
 
 console.log("Listening on port " + port);
-
