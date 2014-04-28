@@ -26,7 +26,7 @@ var clientID = 'YOUR_CLIENT_ID',
  */
 Instagram.set('client_id', clientID);
 Instagram.set('client_secret', clientSecret);
-Instagram.set('callback_url', 'http://YOUR_URL.COM/callback');
+Instagram.set('callback_url', 'http://YOUR_URL.com/callback');
 Instagram.set('redirect_uri', 'http://YOUR_URL.com');
 Instagram.set('maxSockets', 10);
 
@@ -77,9 +77,9 @@ Instagram.subscriptions.subscribe({
 Instagram.subscriptions.unsubscribe({ id: '3668016' });
 
 // https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
-io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
+io.configure(function () {
+  io.set("transports", ["xhr-polling"]);
+  io.set("polling duration", 10);
 });
 
 /**
@@ -109,7 +109,7 @@ app.get("/views", function(req, res){
  * and send to the client side via socket.emit
  */
 io.sockets.on('connection', function (socket) {
-  Instagram.tags.recent({ 
+  Instagram.tags.recent({
       name: 'lollapalooza',
       complete: function(data) {
         socket.emit('firstShow', { firstShow: data });
@@ -150,4 +150,3 @@ function sendMessage(url) {
 }
 
 console.log("Listening on port " + port);
-
