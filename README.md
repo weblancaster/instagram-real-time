@@ -1,4 +1,6 @@
-Lollagram - Instagram Real Time App
+> I have done this 3 years ago so I'm not sure if still working.. I'm sure some things changed so I would use this repo just as base to your work. 
+ 
+Instagram Real Time App
 =============
 
 ## Intro
