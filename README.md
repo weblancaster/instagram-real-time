@@ -1,4 +1,4 @@
-> I have done this 3 years ago so I'm not sure if still working.. I'm sure some things changed so I would use this repo just as base to your work. 
+> I have done this 3 years ago so I'm not sure if still working.. I'm sure some things changed so I would use this repo just as base to your work. Oh and looks like Lollagram domain was bought and is now a porn website.
  
 Instagram Real Time App
 =============
