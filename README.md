@@ -1,6 +1,7 @@
-> I have done this 3 years ago so I'm not sure if still working.. I'm sure some things changed so I would use this repo just as base to your work. Oh and looks like Lollagram domain was bought and is now a porn website.
+> This repository is 4+ years old and not maintained so I'm not sure if still working and very likely Instagram API have been changed therefore use this repository as base/reference to your work. 
+Oh and looks like Lollagram domain was bought and is now a porn website.
  
-Instagram Real Time App
+Instagram Real Time App (deprecated)
 =============
 
 ## Intro
