@@ -1,4 +1,4 @@
-> This repository is 4+ years old and not maintained so I'm not sure if still working and very likely Instagram API have been changed therefore use this repository as base/reference to your work. 
+> This repository is more than 5+ years old and not maintained so I'm not sure if still working and very likely Instagram API have been changed therefore use this repository as base/reference to your work. 
 Oh and looks like Lollagram domain was bought and is now a porn website.
  
 Instagram Real Time App (deprecated)
